@@ -1,0 +1,18 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+		function proceed(){
+		  $.post("shortener.php",{'url':document.getElementsByName("URL")[0].value}, function(result){
+					document.getElementsByName("output")[0].innerHTML+="<br>"+result;
+			});
+		}
+	</script>
+	<title>URL Shortener Test Page</title>
+</head>
+<body>
+URL to shorten:<input name="URL">
+<input type="button" name="button" value="OK" onclick="proceed()">
+<br> <div type="text" width="100%" name="output"></div>
+</body>
+</html>
